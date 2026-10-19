@@ -1,6 +1,6 @@
-@import 'tailwindcss';
+@import 'tailwindcss' source(none);
 @source '../views/**/*.blade.php';
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../js/**/*.js';
 @theme {
     --font-sans: ui-sans-serif, system-ui, sans-serif;
     --color-ocean: #087f8c;
