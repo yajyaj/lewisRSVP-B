@@ -1,0 +1,15 @@
+{
+  "environment": "disposable local SQLite fixtures; Edge; no real account edits",
+  "checks": [
+    "browser creates published event; public API uses saved venue and UTC deadline",
+    "/admin/event-settings: six required widths, no overflow or duplicate element IDs",
+    "/admin/event-settings/create: six required widths, no overflow or duplicate element IDs",
+    "/admin/event-settings/1/edit: six required widths, no overflow or duplicate element IDs",
+    "/admin/profile: six required widths, no overflow or duplicate element IDs",
+    "browser saves event edits and public API reflects update",
+    "forged profile write rejected with 419",
+    "browser updates own name and email with current-password verification",
+    "own password change signs out current session; new password signs in",
+    "no browser JavaScript errors"
+  ]
+}

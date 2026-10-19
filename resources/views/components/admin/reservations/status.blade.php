@@ -1,0 +1,2 @@
+@props(['reservation'])
+<span @class(['inline-flex rounded-full px-3 py-1 text-xs font-semibold', 'bg-slate-100 text-slate-700' => $reservation->cancelled_at, 'bg-teal-50 text-ocean' => !$reservation->cancelled_at && $reservation->attendance_status === 'attending', 'bg-amber-50 text-amber-800' => !$reservation->cancelled_at && $reservation->attendance_status === 'declined'])>{{ $reservation->cancelled_at ? 'Cancelled' : ($reservation->attendance_status === 'attending' ? 'Attending' : 'Declined') }}</span>

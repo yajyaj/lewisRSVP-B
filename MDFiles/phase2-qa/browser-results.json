@@ -1,0 +1,18 @@
+{
+  "environment": "disposable SQLite fixture data; local Laravel; Edge",
+  "checks": [
+    "real Blade dashboard login and metrics rendering",
+    "/admin: all six required widths have no page overflow",
+    "/admin/reservations: all six required widths have no page overflow",
+    "/admin/reservations/create: all six required widths have no page overflow",
+    "/admin/reservations/1: all six required widths have no page overflow",
+    "/admin/reservations/1/edit: all six required widths have no page overflow",
+    "real browser creates one-guest reservation and displays audit history",
+    "reservation cancellation rejects forged cross-origin write with 419",
+    "real browser edits guest and response with a change reason",
+    "real browser confirms cancellation without deleting guest record",
+    "real browser restores original attendance response",
+    "real browser searches and filters server-rendered reservations",
+    "no browser JavaScript errors"
+  ]
+}

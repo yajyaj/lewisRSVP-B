@@ -1,0 +1,11 @@
+{
+  "environment": "isolated SQLite, actual React/Laravel requests, reduced motion, US visitor timezone",
+  "checks": [
+    "live root landing/invitation and two venues at six widths; event-local deadline in US browser timezone",
+    "actual attending RSVP and declined update retain same response identity",
+    "admin form six widths, automatic timezone, Add/Remove focus and saved second-occasion removal",
+    "direct slug and browser refresh preserve saved one-occasion event",
+    "unavailable state disables entry; retry reloads real configured event",
+    "no browser JavaScript errors"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "environment": "disposable local SQLite fixtures; Edge; no real account edits",
+  "checks": [
+    "/admin/users: six required widths, no page overflow",
+    "/admin/users/create: six required widths, no page overflow",
+    "/admin/users/2: six required widths, no page overflow",
+    "/admin/users/2/edit: six required widths, no page overflow",
+    "/admin/users/2/password: six required widths, no page overflow",
+    "/admin/guests: six required widths, no page overflow",
+    "/admin/guests/1: six required widths, no page overflow",
+    "/admin/guests/1/edit: six required widths, no page overflow",
+    "real browser creates hashed-password staff account",
+    "real browser edits account details",
+    "forged account deactivation rejected with 419",
+    "real browser changes target password after actor confirmation",
+    "real browser deactivates account without deletion",
+    "real browser reactivates retained account",
+    "staff cannot access user management and Users navigation is hidden",
+    "staff edits existing own-event contact and linked reservation remains",
+    "no browser JavaScript errors"
+  ]
+}

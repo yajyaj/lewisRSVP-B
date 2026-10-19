@@ -1,0 +1,53 @@
+@import 'tailwindcss';
+@source '../views/**/*.blade.php';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@theme {
+    --font-sans: ui-sans-serif, system-ui, sans-serif;
+    --color-ocean: #087f8c;
+    --color-deep: #123b55;
+    --color-mist: #f5f9fb;
+    --color-line: #dce7ed;
+    --color-muted: #526879;
+}
+@layer base {
+    body { margin: 0; }
+    button, a, input, summary { -webkit-tap-highlight-color: transparent; }
+    button, summary { cursor: pointer; }
+    :focus-visible { outline: 3px solid #087f8c; outline-offset: 4px; }
+    .admin-sidebar :focus-visible { outline-color: #99f6e4; }
+    [hidden] { display: none !important; }
+}
+@layer components {
+    .admin-nav-link { @apply flex min-h-12 items-center gap-3 rounded-xl px-3 py-3 text-sm font-medium text-teal-50 hover:bg-white/10; }
+    .admin-nav-link.is-active { @apply bg-white text-deep shadow-sm hover:bg-teal-50; }
+    .skip-link { position: fixed; z-index: 70; top: 1rem; left: 1rem; padding: 1rem; background: white; transform: translateY(-200%); }
+    .skip-link:focus { transform: translateY(0); }
+    .admin-frame { min-height: 100vh; }
+    .admin-sidebar { display: flex; flex-direction: column; background: #123b55; color: white; }
+    .mobile-close, .mobile-open, #collapse-sidebar, .collapsed-label { display: none; }
+    .admin-backdrop { position: fixed; inset: 0; background: #123b5580; z-index: 40; }
+    @media (min-width: 1024px) {
+        .admin-frame { display: grid; grid-template-columns: 256px minmax(0, 1fr); }
+        .admin-sidebar { position: sticky; top: 0; height: 100vh; overflow-y: auto; }
+        #collapse-sidebar { display: flex; }
+        body[data-collapsed] .admin-frame { grid-template-columns: 88px minmax(0, 1fr); }
+        body[data-collapsed] .sidebar-label { display: none; }
+        body[data-collapsed] .admin-sidebar > div:first-child { padding-inline: 24px; }
+        body[data-collapsed] .collapsed-label { display: inline; }
+        body[data-collapsed] .admin-nav-link { justify-content: center; }
+        body[data-collapsed] #collapse-sidebar svg { transform: rotate(180deg); }
+    }
+    @media (max-width: 1023px) {
+        .admin-js .mobile-open, .admin-js .mobile-close { display: grid; }
+        .admin-js .admin-sidebar { position: fixed; inset: 0 auto 0 0; z-index: 50; width: min(280px, calc(100vw - 40px)); height: 100dvh; overflow-y: auto; transform: translateX(-100%); visibility: hidden; }
+        .admin-js body[data-sidebar-open] .admin-sidebar { transform: translateX(0); visibility: visible; }
+        .admin-js body[data-sidebar-open] { overflow: hidden; }
+    }
+    .login-intro { background: radial-gradient(ellipse at 0% 100%, #087f8c 0%, transparent 65%), #123b55; }
+}
+
+@layer components {
+    .admin-control { @apply min-h-12 w-full min-w-0 rounded-xl border border-slate-300 bg-white px-4 text-sm text-deep; }
+    .admin-label { @apply text-sm font-semibold text-deep; }
+    .admin-secondary { @apply inline-flex min-h-12 items-center justify-center rounded-xl border border-line bg-white px-5 py-3 text-sm font-semibold text-deep hover:bg-teal-50; }
+}

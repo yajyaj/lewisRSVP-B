@@ -1,0 +1,17 @@
+{
+  "environment": "disposable SQLite, local Laravel, Edge; no production data",
+  "checks": [
+    "real HTTP Blade login and guest redirect",
+    "Blade session is accepted by existing Sanctum API",
+    "real HTTP forged logout rejected with 419",
+    "320px: no overflow; responsive navigation and focus",
+    "375px: no overflow; responsive navigation and focus",
+    "390px: no overflow; responsive navigation and focus",
+    "768px: no overflow; responsive navigation and focus",
+    "1024px: no overflow; responsive navigation and focus",
+    "1440px: no overflow; responsive navigation and focus",
+    "mobile drawer wraps Tab/Shift+Tab and restores focus",
+    "staff Users link hidden and direct access forbidden",
+    "no browser JavaScript errors"
+  ]
+}
